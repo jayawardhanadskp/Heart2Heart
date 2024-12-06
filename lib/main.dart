@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paint/pages/login_page.dart';
 import 'package:paint/providers/drawing_provider.dart';
 import 'package:provider/provider.dart';
 import 'pages/home_page.dart';
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Drawing App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyHomePage(),
+      // theme: ThemeData(primarySwatch: Colors.blue),
+      home: LoginPage(),
     );
   }
 }
