@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "404328185673",
+    "project_id": "heart2heart-340d6",
+    "storage_bucket": "heart2heart-340d6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404328185673:android:f3bae2eeffd76ddf076498",
+        "android_client_info": {
+          "package_name": "com.kasun.paint"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGh2zuStIzCox2AbitT_s_owODITtyOdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
