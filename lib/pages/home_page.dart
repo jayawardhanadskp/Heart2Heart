@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:paint/providers/auth_provider.dart';
 import 'package:paint/providers/drawing_provider.dart';
 import 'package:provider/provider.dart';
 import '../widgets/custom_painter.dart';
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<DrawingProvider>(context);
+    final authProvider = Provider.of<GFAuthProvider>(context);
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
 
@@ -58,13 +62,27 @@ class MyHomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                ElevatedButton(
+                    onPressed: () async {
+                      await authProvider.signInWIthGoogle();
+
+                    },
+                    child: const Text('data')),
+
+                ElevatedButton(
+                    onPressed: () {
+
+                    },
+                    child: const Text('Create A Pair')),
+                    
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     width: width * 0.80,
                     height: height * 0.80,
                     decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20.0)),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.4),
@@ -84,7 +102,8 @@ class MyHomePage extends StatelessWidget {
                       },
                       child: SizedBox.expand(
                         child: ClipRRect(
-                          borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(20.0)),
                           child: CustomPaint(
                             painter: MyCustomPainter(
                               points: provider.points,
