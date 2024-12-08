@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paint/models/drawing_area.dart';
 
 class DrawingProvider with ChangeNotifier {
-  final List<List<DrawingArea>> _points = [];  // Completed strokes
+  final List<List<DrawingArea>> _points = []; // Completed strokes
   List<DrawingArea> _currentStroke = []; // Current stroke being drawn
   Color _selectedColor = Colors.black;
   double _strokeWidth = 2.0;
@@ -69,6 +69,8 @@ class DrawingProvider with ChangeNotifier {
     if (!_isEraserActive) {
       _points.add(List.from(_currentStroke));
       _currentStroke = [];
+      print(_currentStroke);
+      print(_points);
     }
     notifyListeners();
   }
