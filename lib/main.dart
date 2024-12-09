@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:paint/firebase_options.dart';
+import 'package:paint/pages/create_pair_page.dart';
 import 'package:paint/pages/login_page.dart';
 import 'package:paint/providers/auth_provider.dart';
 import 'package:paint/providers/drawing_provider.dart';
@@ -40,12 +41,15 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(builder: (context) => LoginPage());
           case '/home':
             return MaterialPageRoute(builder: (context) => MyHomePage());
-          case '/profile':
+          // case '/profile':
             // Passing arguments to ProfilePage
-            final String userId = settings.arguments as String;
+            // final String userId = settings.arguments as String;
             // return MaterialPageRoute(
               // builder: (context) => ProfilePage(userId: userId),
             // );
+
+            case '/createPair':
+              return MaterialPageRoute(builder: (context) => CreatePairPage(), settings: settings);
           default:
             return MaterialPageRoute(builder: (context) => LoginPage());
         }
